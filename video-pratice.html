@@ -10,10 +10,34 @@
     <p>
       Below is a sample video embedded using the <code>&lt;video&gt;</code> tag:
     </p>
-    <video src="videos/sample.mp4" controls width="480" height="320">
+    <h3><code>1. &lt;video&gt;</code> tag</h3>
+    <video src="videos/sample.mp4" width="480" height="320">
       <!-- 브라우저가 <video> 태그를 지원하지 않을 경우 표시될 텍스트 -->
       Your browser does not support the video tag.
     </video>
+    <h3><code>2. &lt;video&gt;</code> tag with autoplay muted</h3>
+    <video src="videos/sample.mp4" autoplay muted width="480" height="320">
+      <!-- 브라우저가 <video> 태그를 지원하지 않을 경우 표시될 텍스트 -->
+      Your browser does not support the video tag.
+    </video>
+    <h3><code>3. &lt;video&gt;</code> tag with controls</h3>
+    <video
+      id="myVideo"
+      src="videos/sample.mp4"
+      controls
+      width="480"
+      height="320"
+    >
+      <!-- 브라우저가 <video> 태그를 지원하지 않을 경우 표시될 텍스트 -->
+      Your browser does not support the video tag.
+    </video>
+    <script>
+      // 비디오 요소 선택
+      const video = document.getElementById("myVideo");
+
+      // 기본 음량 설정 (0 ~ 1)
+      video.volume = 0.02; // 20% 음량
+    </script>
   </body>
   <article>
     <a href="https://bcs-react-phi.vercel.app/">홈으로 이동하기</a>
