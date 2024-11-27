@@ -39,15 +39,13 @@ a:hover {
 
 /* 버튼 스타일 */
 button {
-  background-color: #ff6600; /* 주황색 버튼 */
+  background-color: #f37623; /* 주황색 버튼 */
   color: #fff;
   border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
+  border-radius: 8px;
+  padding: 8px;
   cursor: pointer;
   margin: 20px auto;
-  display: block;
 }
 
 button:hover {
