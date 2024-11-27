@@ -17,22 +17,33 @@
       <section>
         <h2>login</h2>
         <form action="/login" method="post">
-          <input type="text" />
-          <input type="password" />
-          <button type="submit">Login</button>
+          <label for="username">Username:</label>
+          <input
+            id="username"
+            name="username"
+            type="text"
+            placeholder="Enter your username"
+            required
+          /><br /><br />
+          <label for="password">Password:</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Enter your password"
+            required
+          /><br /><br />
+          <button type="submit">Login</button><br /><br />
         </form>
       </section>
     </main>
-
-    <!-- Footer -->
-    <footer>
-      <p>&copy; 2024 My Website. All rights reserved.</p>
-    </footer>
   </body>
 
   <article>
     <a href="https://bcs-react-phi.vercel.app/">홈으로 이동하기</a>
   </article>
+
+  <!-- Footer -->
   <footer>
     <p>&copy; 2024 Inhyeok. All rights reserved.</p>
   </footer>
