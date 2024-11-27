@@ -1,0 +1,36 @@
+/* 태그 선택자 */
+h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* 클래스 선택자 */
+.centered {
+  text-align: center;
+  font-size: 18px;
+  color: #34495e;
+}
+
+/* 아이디 선택자 */
+#main-title {
+  font-size: 32px;
+  font-family: Arial, sans-serif;
+}
+
+/* 그룹 선택자 */
+h1,
+p {
+  margin-bottom: 10px;
+}
+
+/* 추가 스타일 */
+.box {
+  width: 200px;
+  height: 100px;
+  background-color: #f0f8ff;
+  border: 2px solid #2c3e50;
+  margin: 20px auto;
+  text-align: center;
+  line-height: 100px;
+}

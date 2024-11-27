@@ -4,44 +4,74 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Video Example</title>
+    <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
     <h1>Video Example</h1>
-    <p>
-      Below is a sample video embedded using the <code>&lt;video&gt;</code> tag:
-    </p>
-    <h3><code>1. &lt;video&gt;</code> tag</h3>
-    <video src="../videos/sample.mp4" width="480" height="320">
-      <!-- 브라우저가 <video> 태그를 지원하지 않을 경우 표시될 텍스트 -->
-      Your browser does not support the video tag.
-    </video>
-    <h3><code>2. &lt;video&gt;</code> tag with autoplay muted</h3>
-    <video src="../videos/sample.mp4" autoplay muted width="480" height="320">
-      <!-- 브라우저가 <video> 태그를 지원하지 않을 경우 표시될 텍스트 -->
-      Your browser does not support the video tag.
-    </video>
-    <h3><code>3. &lt;video&gt;</code> tag with controls</h3>
-    <video
-      id="myVideo"
-      src="../videos/sample.mp4"
-      controls
-      width="480"
-      height="320"
-    >
-      <!-- 브라우저가 <video> 태그를 지원하지 않을 경우 표시될 텍스트 -->
-      Your browser does not support the video tag.
-    </video>
-    <script>
-      // 비디오 요소 선택
-      const video = document.getElementById("myVideo");
 
-      // 기본 음량 설정 (0 ~ 1)
-      video.volume = 0.02; // 20% 음량
-    </script>
+    <!-- Content Description -->
+    <section>
+      <p>
+          Below is a sample video embedded using the
+          <code>&lt;video&gt;</code> tag:
+        </p>
+    </section>
+
+    <!-- Video Tag 1 -->
+    <section>
+      <h3><code>1. &lt;video&gt;</code> tag</h3>
+      <video src="../videos/sample.mp4" width="480" height="320">
+        <!-- 브라우저가 <video> 태그를 지원하지 않을 경우 표시될 텍스트 -->
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <!-- Video Tag 2 -->
+    <section>
+      <h3><code>2. &lt;video&gt;</code> tag with autoplay muted</h3>
+      <video
+        src="../videos/sample.mp4"
+        autoplay
+        muted
+        width="480"
+        height="320"
+      >
+        <!-- 브라우저가 <video> 태그를 지원하지 않을 경우 표시될 텍스트 -->
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <!-- Video Tag 3 -->
+    <section>
+      <h3><code>3. &lt;video&gt;</code> tag with controls</h3>
+      <video
+        id="myVideo"
+        src="../videos/sample.mp4"
+        controls
+        width="480"
+        height="320"
+      >
+        <!-- 브라우저가 <video> 태그를 지원하지 않을 경우 표시될 텍스트 -->
+        Your browser does not support the video tag.
+      </video>
+      <script>
+        // 비디오 요소 선택
+        const video = document.getElementById("myVideo");
+
+        // 기본 음량 설정 (0 ~ 1)
+        video.volume = 0.02; // 20% 음량
+      </script>
+    </section>
+
+    <!-- Go to Home -->
+    <section>
+      <article>
+        <a href="../index.html">홈으로 이동하기</a>
+      </article>
+    </section>
+    </main>
   </body>
-  <article>
-    <a href="../index.html">홈으로 이동하기</a>
-  </article>
+
   <footer>
     <p>&copy; 2024 Inhyeok. All rights reserved.</p>
   </footer>
