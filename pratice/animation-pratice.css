@@ -1,0 +1,13 @@
+.interactive-btn {
+  background-color: #2ecc71;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.interactive-btn:hover {
+  background-color: #27ae60;
+  transform: scale(1.1);
+}
