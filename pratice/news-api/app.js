@@ -24,7 +24,7 @@ function displayNews(articles) {
     console.log(v);
     const newsItem = document.createElement("section");
     newsItem.innerHTML = `
-        <h2>${v.title}</h2>
+        <h3>${v.title}</h3>
         <p>${v.description || "No description available."}</p>
         <a href="${v.url}" target="_blank">Read more</a>
     `;
