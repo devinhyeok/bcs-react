@@ -1,9 +1,11 @@
-const API_KEY = "27782b47";
-const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}`;
+import { API_URL } from "./config.js";
 
 const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-btn");
 const moviesContainer = document.getElementById("movies-container");
+const favoritesContainer = document.getElementById("favorites-container");
+
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
 async function searchMovies(query) {
   try {
@@ -33,20 +35,70 @@ function displayMovies(movies) {
         movie.Poster !== "N/A" ? movie.Poster : "assets/no-image.png"
       }" alt="${movie.Title}" />
       <h3>${movie.Title}</h3>
-      <button class="favorite-btn">Add to Favorites</button>
+      <button class="favorite-btn">${
+        favorites.includes(movie.imdbID)
+          ? "Remove from Favorites"
+          : "Add to Favorites"
+      }</button>
     `;
 
     movieCard.addEventListener("click", (e) => {
       if (e.target.classList.contains("favorite-btn")) {
-        // 즐겨찾기
+        toggleFavorite(movie.imdbID);
+
+        e.target.textContent = favorites.includes(movie.imdbID)
+          ? "Remove from Favorites"
+          : "Add to Favorites";
+
+        e.stopPropagation();
       } else {
-        window.location.href = `./details.html?id=${movie.imdbID}`;
+        window.location.href = `details.html?id=${movie.imdbID}`;
       }
-      console.log(e.target);
     });
 
     moviesContainer.appendChild(movieCard);
   });
+}
+
+function toggleFavorite(id) {
+  if (favorites.includes(id)) {
+    favorites = favorites.filter((favId) => favId !== id);
+  } else {
+    favorites.push(id);
+  }
+
+  updateFavorites();
+}
+
+async function updateFavorites() {
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+
+  favoritesContainer.innerHTML = "";
+
+  for (const id of favorites) {
+    const movie = await fetchMovieById(id);
+    const favoriteCard = document.createElement("div");
+    favoriteCard.className = "movie-card";
+    favoriteCard.innerHTML = `
+      <img src="${
+        movie.Poster !== "N/A" ? movie.Poster : "assets/no-image.png"
+      }" alt="${movie.Title}" />
+      <h3>${movie.Title}</h3>
+      <button class="remove-btn">Remove</button> 
+    `;
+    favoritesContainer.appendChild(favoriteCard);
+  }
+}
+
+async function fetchMovieById(id) {
+  try {
+    const response = await fetch(`${API_URL}&i=${id}`);
+    const data = await response.json();
+
+    return data;
+  } catch (error) {
+    console.error("Error fetching movie details:", error);
+  }
 }
 
 searchBtn.addEventListener("click", () => {
@@ -56,3 +108,5 @@ searchBtn.addEventListener("click", () => {
     searchMovies(query);
   }
 });
+
+updateFavorites();

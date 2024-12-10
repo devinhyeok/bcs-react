@@ -1,5 +1,4 @@
-const API_KEY = "27782b47";
-const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}`;
+import { API_URL } from "./config.js";
 
 const moviePoster = document.getElementById("movie-poster");
 const movieTitle = document.getElementById("movie-title");
